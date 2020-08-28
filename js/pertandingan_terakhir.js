@@ -1,5 +1,5 @@
 function PertTerakhirJSON(data) {
-    var TerakhirHTML = ''
+    let TerakhirHTML = ''
     data.matches.forEach(function (terakhir) {
         terakhir = JSON.parse(JSON.stringify(terakhir).replace(/http:/g, 'https:'));
         TerakhirHTML += `

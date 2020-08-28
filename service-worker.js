@@ -26,6 +26,7 @@ workbox.precaching.precacheAndRoute([
     {url: '/js/script.js', revision: '1'},
     {url: '/js/pertandingan_terakhir.js', revision: '1'},
     {url: '/js/pertandingan_mendatang.js', revision: '1'},
+    {url: '/js/jadwal.js', revision: '1'},
     {url: '/js/db.js', revision: '1'},
     {url: '/js/idb.js', revision: '1'},
     {url: '/js/main.js', revision: '1'},
@@ -57,7 +58,10 @@ workbox.precaching.precacheAndRoute([
     {url: 'https://unpkg.com/sweetalert/dist/sweetalert.min.js', revision: '1'},
     {url: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap', revision: '1'},
     {url: 'https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2', revision: '1'}
-]);
+],
+{
+    ignoreUrlParametersMatching: [/.*/]
+});
 
 workbox.routing.registerRoute(
     /\.(?:png|gif|jpg|jpeg|svg)$/,

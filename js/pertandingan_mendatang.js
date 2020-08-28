@@ -1,5 +1,5 @@
 function pertMendatangJSON(data) {
-    var MendatangHTML = ''
+    let MendatangHTML = ''
     data.matches.forEach(function (mendatang) {
         mendatang = JSON.parse(JSON.stringify(mendatang).replace(/http:/g, 'https:'));
         MendatangHTML += `
@@ -8,7 +8,7 @@ function pertMendatangJSON(data) {
         <p>${mendatang.competition.name}</p>
         <p><b>${convertDate(new Date(mendatang.utcDate))}</b></p>`;
     });
-    console.log(data.matches.length);
+    console.log("Pertandingan Mendatang = " + data.matches.length);
     if(data.matches.length == 0)
     {
         MendatangHTML += `<h5 class="center">Belum Tersedia</h5>`;
