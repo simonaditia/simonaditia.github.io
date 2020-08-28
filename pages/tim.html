@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Football - Detail Tim</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#4e342e" />
+    <meta name="description" content="Submission 2 Aplikasi Football" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-tim.css">
+</head>
+
+<body>
+
+    <!-- Navigasi -->
+    <nav class="a-bg-main brown darken-3" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo a-site-title center" id="logo-container"><img class="logoss" src="../img/logo.png" alt="football" width="40px" height="40px">Football</a>
+            <a href="javascrit:void(0)" onclick="javascript:window.history.back(-1);return false;"
+                data-target="nav-mobile">
+                <i class="fas material-icons">arrow_back</i>
+            </a>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+    <div class="container">
+        <div class="row a-mt-3">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-content">
+                        <!-- <div class="center-align">
+                            <img id="a-logoklub" alt="logo tim" align="center" width="100" height="100" vspace="25">
+                            <h5 class="a-font-bold" id="a-namaklub"></h5>
+                            <div id="addToFavorit">
+                                <a class="btn brown darken-3">
+                                    <i id="iconFav" class="far fa-star"> &nbsp; Tambah Ke Favorit</i>
+                                </a>
+                            </div>
+                        </div> -->
+                        <div class="row pt-3 d-flex team-wraper-top">
+                            <div class="col s12 m11 l5 center-align">
+                                <img id="a-logoklub" alt="logo tim" class="responsive-img team-logo">
+                            </div>
+                            <div class="team-name justify-center f-column col s12 m11 l7 left-align">
+                                <blockquote>
+                                    <h1 id="a-namaklub"></h1>
+                                    <p id="a-websitee"></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="center-align" id="a-preloader1">
+                            <div class="center-align">
+                                <img src="../img/loading.gif">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12 center-align">
+                                <h4>Keterangan</h4>
+                                <hr class="hr">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col l1"></div>
+                            <div class="col s12 m12 l10">
+                                <ul class="collection">
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Name</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-name"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Short Name</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-shortName"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Tla</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-tla"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Address</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-address"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class=" collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Phone</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-phone"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Website</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-website"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Email</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-email"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Founded</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-founded"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Venue</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-venue"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s5">
+                                                <p>Club Colors</p>
+                                            </div>
+                                            <div class="col s1">
+                                                :
+                                            </div>
+                                            <div class="col s6">
+                                                <div id="a-clubColors"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col l1"></div>
+                        </div>
+                    </div>
+                    <div id="addToFavorit" class="fixed-action-btn">
+                        <a class="btn-floating btn-large blue" id="save">
+                            <i id="iconFav" class="large material-icons">favorite_border</i>
+                        </a>
+                    </div>
+                    <div class="card-tabs">
+                        <div class="card-content ">
+                            <div class="center-align" id="a-preloader2">
+                                <div class="center-align">
+                                    <img src="../img/loading.gif">
+                                </div>
+                            </div>
+                            <div class="center-align">
+                                <h4 class="a-font-bold">Pemain</h4>
+                                <hr class="hr">
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6 l6">
+                                    <div id="squadLeft"></div>
+                                </div>
+                                <div class="col s12 m6 l6">
+                                    <div id="squadRight"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/idb.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        // REGISTER SERVICE WORKER
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("../service-worker.js")
+                    .then(function () {
+                        console.log("Pendaftaran ServiceWorker berhasil");
+                    })
+                    .catch(function () {
+                        console.log("Pendaftaran ServiceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.");
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = Number(urlParams.get("id"));
+            var isFavorit = false
+            checkData("tim_favorit", id).then((msg) => {
+                console.log("statusData: Resolve = " + msg)
+                document.getElementById("iconFav").classList.remove('material-icons');
+                document.getElementById("iconFav").classList.add('material-icons');
+                document.getElementById("iconFav").innerHTML = "favorite"
+                getSavedDataById("tim")
+                isFavorit = true
+            }).catch((msg) => {
+                console.log("statusData: Reject = " + msg)
+                document.getElementById("iconFav").classList.remove('material-icons');
+                document.getElementById("iconFav").classList.add('material-icons');
+                document.getElementById("iconFav").innerHTML = "favorite_border"
+                getDetailTeamById()
+                isFavorit = false
+            })
+
+            var iconFav = document.getElementById("iconFav");
+
+            iconFav.onclick = function () {
+                console.log("Tombol Favorit di klik.");
+                if (isFavorit) {
+                    deleteDatafav("tim_favorit", id);
+                    isFavorit = false
+                } else {
+                    items = getDetailTeamById();
+                    items.then(function (tim) {
+                        createDataFav("tim", tim);
+                    });
+                    isFavorit = true
+                }
+
+            };
+        });
+    </script>
+</body>
+
+</html>

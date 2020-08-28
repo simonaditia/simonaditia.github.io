@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.hr {
+    width: 250px;
+    border-top: 3px solid #999;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.team-logo {
+    max-height: 40vh;
+}
+
+.team-name {
+    min-height: 100% !important;
+}
+
+.f-column {
+    flex-direction: column !important;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.justify-center>* {
+    /* disable margin yang ada di .col*/
+    margin-left: 0 !important;
+}
+
+.collection-item .row {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width : 600px) {
+    .team-wraper-top {
+        display: block !important;
+    }
+}

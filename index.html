@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Football</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <meta name="description" content="Submission 2 Aplikasi Football" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4e342e" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" href="./img/192x192.png">
+
+</head>
+
+<body>
+    <!-- Navigasi -->
+    <header>
+        <!-- desktop nav -->
+        <div class="navbar-fixed">
+            <nav class="brown darken-3">
+                <div class="nav-wrapper container">
+                    <a href="#!" class="brand-logo"><img class="logoss" src="img/logo.png" alt="football" width="40px" height="40px">Football</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger">☰</a>
+
+                    <ul class="topnav right hide-on-med-and-down">
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- mobile nav -->
+        <ul id="mobile-nav" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="./img/9.jpg" alt="background">
+                    </div>
+                    <a href="#!"><img class="circle" src="./img/profile.png" alt="profile"></a>
+                    <a href="#!"><span class="white-text name">Adit Pieter</span></a>
+                    <a href="#!"><span class="white-text email">aditpieter@gmail.com</span></a>
+                </div>
+            </li>
+            <li>
+                <ul class="mobilenav">
+
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <!-- Akhir Navigasi -->
+
+    <div id="body-content"></div>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/idb.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/pertandingan_mendatang.js"></script>
+    <script src="js/pertandingan_terakhir.js"></script>
+    <script src="js/db.js"></script>    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var page = window.location.hash.substr(1);
+        });
+    </script>
+    <script type="text/javascript">
+    const displayTime = () => {
+        moment.locale("id");
+        $(".time").text(moment().format("h:mm:ss a,"));
+        $(".date").text(moment().format("LL"));
+    };
+
+    const updateTime = () => {
+        displayTime();
+        setTimeout(updateTime, 1000)
+    };        
+    updateTime();
+    if (!window.location.href == "https://football-pwa-simon.web.app/") { 
+        document.write('<script src="js/time.js"><\/script>');
+        document.write('<script src="node_modules/moment/moment.js"><\/script>');
+        document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>');
+    } else if(!window.location.href == "https://simonaditia.github.io/") {
+        document.write('<script src="js/time.js"><\/script>');
+        document.write('<script src="node_modules/moment/moment.js"><\/script>');
+        document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>');
+    }
+    </script>
+</body>
+
+</html>

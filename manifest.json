@@ -1,0 +1,23 @@
+{
+    "name": "Football PWA",
+    "short_name": "Football PWA",
+    "description": "Aplikasi Football PWA",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#4e342e",
+    "theme_color": "#4e342e",
+    "icons": [{
+            "src": "/img/192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/img/512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "gcm_sender_id": "762831916510"
+}

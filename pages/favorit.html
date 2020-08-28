@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="center a-font-bold">Favorit</h4>
+        <hr class="hr">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs brown darken-3">
+                    <li class="tab col s6"><a class="white-text" href="#fav-tim"
+                            onclick="readDataFavHtml('tim')">Tim</a></li>
+                    <li class="tab col s6"><a class="white-text" href="#fav-tanding"
+                            onclick="readDataFavHtml('tanding')">Pertandingan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row a-mt-3">
+            <div class="col s12 m12" id="favorit-content">
+                <div class="center-align" id="a-preloader">
+                    <div class="center-align">
+                        <img src="../img/null.png" width="200px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(document).ready(function () {
+            $('.tabs').tabs();
+        });
+    })
+</script>
+
+</html>

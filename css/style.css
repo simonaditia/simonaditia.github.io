@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hr {
+    width: 250px;
+    border-top: 3px solid #999;
+}
+
+.hr-tanding {
+    width: 350px;
+    border-top: 3px solid #999;
+}
+
+.a-font-bold {
+    font-weight: bold;
+}
+
+.jumbotronfsdfs {
+    font-size: 20px;
+    padding: 20px;
+    /* background-color: #2b4246; */
+    text-align: center;
+    color: white;
+    background-image: url("../img/7.jpg");
+    /* min-height: 500px; */
+    min-height: 620px;
+    opacity: 0.7;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.down {
+    color: white;
+    opacity: 0.8;
+    position: absolute;
+    border: 2px solid #2f2f2f;
+    margin: 0 auto;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    z-index: 100;
+}
+
+.down:hover {
+    opacity: 1;
+}
+
+.center-align {
+    margin-top: 110px;
+}
+
+.a-img-club-klasemen {
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+}
+
+.logoss {
+    margin-top: 6px;
+}
+
+@media only screen and (max-width: 600px) {
+    .a-img-club-klasemen {
+        float: none !important;
+    }
+}

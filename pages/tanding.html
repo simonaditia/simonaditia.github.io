@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Football - Detail Pertandingan</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#4e342e" />
+    <meta name="description" content="Submission 2 Aplikasi Football" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="css/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome/all.min.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigasi -->
+    <nav class="a-bg-main brown darken-3" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo a-site-title center" id="logo-container"><img class="logoss" src="../img/logo.png" alt="football" width="40px" height="40px">Football</a>
+            <a href="javascrit:void(0)" onclick="javascript:window.history.back(-1);return false;"
+                data-target="nav-mobile">
+                <i class="fas material-icons">arrow_back</i>
+            </a>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+    <div class="row container center">
+        <div class="row a-mt-3">
+            <div class="card-content">
+                <div class="center">
+                    <h4 class="a-font-bold a-mb-3">Detail Pertandingan</h4>
+                    <hr class="hr-tanding">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content" id="ndakAda">
+                    <div class="col s12 m12" id="a-preloader">
+                        <div class="center-align">
+                            <img src="../img/loading.gif">
+                        </div>
+                    </div>
+                    <h5 id="a-matchDay" class="center">Matchday: </h5>
+                    <div id="a-kickOff" class="center">Kick Off: </div>
+
+                    <div class="row" style="margin:20px">
+                        <div class="col s5 right-align truncate">
+                            <span id="a-homeTeamName" class="a-font-bold teal-text"></span>
+                        </div>
+                        <div class="col s2 center">
+                            VS
+                        </div>
+                        <div class="col s5 left-align truncate">
+                            <span id="a-awayTeamName" class="a-font-bold teal-text"></span>
+                        </div>
+                    </div>
+
+                    <div id="a-venue" class="center"></div>
+
+                    <div class="row center">
+                        <hr size="5px">
+                        <h6 class="center">Head To Head </h6>
+                        <div class="center" id="a-numberOfMatches">Number Of Matches: </div>
+                        <div class="center" id="a-totalGoals">total Goals: </div>
+
+                        <div class="col s4 right-align">
+                            <span id="a-homeTeamWins" class="a-font-bold teal-text"></span>
+                        </div>
+                        <div class="col s4">WINS</div>
+                        <div class="col s4 left-align">
+                            <span id="a-awayTeamWins" class="a-font-bold teal-text"></span>
+                        </div>
+
+                        <div class="col s4 right-align">
+                            <span id="a-homeTeamDraws" class="a-font-bold teal-text"></span>
+                        </div>
+                        <div class="col s4">DRAWS</div>
+                        <div class="col s4 left-align">
+                            <span id="a-awayTeamDraws" class="a-font-bold teal-text"></span>
+                        </div>
+
+                        <div class="col s4 right-align">
+                            <span id="a-homeTeamLosses" class="a-font-bold teal-text"></span>
+                        </div>
+                        <div class="col s4">LOSSES</div>
+                        <div class="col s4 left-align">
+                            <span id="a-awayTeamLosses" class="a-font-bold teal-text"></span>
+                        </div>
+                    </div>
+                    <div id="addToFavorit" class="fixed-action-btn">
+                        <a class="btn-floating btn-large blue" id="save">
+                            <i id="iconFav" class="large material-icons">favorite_border</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/idb.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("../service-worker.js")
+                    .then(function () {
+                        console.log("Pendaftaran ServiceWorker berhasil");
+                    })
+                    .catch(function () {
+                        console.log("Pendaftaran ServiceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.");
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = Number(urlParams.get("id"));
+            var isFavorit = false
+            checkData("tanding_favorit", id).then((msg) => {
+                console.log("statusData: resolve = " + msg)
+                document.getElementById("iconFav").classList.remove('material-icons');
+                document.getElementById("iconFav").classList.add('material-icons');
+                document.getElementById("iconFav").innerHTML = "favorite"
+                getSavedDataById("tanding")
+                isFavorit = true
+            }).catch((msg) => {
+                console.log("statusData: reject = " + msg)
+                document.getElementById("iconFav").classList.remove('material-icons');
+                document.getElementById("iconFav").classList.add('material-icons');
+                document.getElementById("iconFav").innerHTML = "favorite_border"
+                getDetailTandingById()
+                isFavorit = false
+            })
+
+            var iconFav = document.getElementById("iconFav");
+
+            iconFav.onclick = function () {
+                console.log("Tombol Favorit di klik.");
+                if (isFavorit) {
+                    deleteDatafav("tanding_favorit", id);
+                    isFavorit = false
+                } else {
+                    items = getDetailTandingById();
+                    items.then(function (tanding) {
+                        createDataFav("tanding", tanding);
+                    });
+                    isFavorit = true
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>
